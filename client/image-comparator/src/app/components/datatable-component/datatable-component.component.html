@@ -1,0 +1,45 @@
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+  <table
+    class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+  >
+    <thead
+      class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+    >
+      <tr>
+        <th class="px-6 py-3">Imagen carpeta 1</th>
+        <th class="px-6 py-3">Imagen carpeta 2</th>
+        <th class="px-6 py-3">Hash</th>
+        <th class="px-6 py-3">Tamaño</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pair of imageData">
+        < *ngFor="let pair of imageData">
+        <td>
+          <img
+            *ngIf="pair.img1.file"
+            [src]="getFileUrl(pair.img1.hash, '1')"
+            [alt]="pair.img1.originalName"
+            class="w-24 h-24 object-contain border rounded mb-2"
+          />
+          <div>{{ pair.img1.originalName }}</div>
+        </td>
+        <td>
+          <img
+            *ngIf="pair.img2.file"
+            [src]="getFileUrl(pair.img2.hash, '2')"
+            [alt]="pair.img2.originalName"
+            class="w-24 h-24 object-contain border rounded mb-2"
+          />
+          <div>{{ pair.img2.originalName }}</div>
+        </td>
+        <td class="px-6 py-4">
+          <div>{{ pair.img1.hash }}</div>
+        </td>
+        <td class="px-6 py-4">
+          <div>{{ pair.img1.size | number }} bytes</div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
