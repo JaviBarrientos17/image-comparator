@@ -3,11 +3,19 @@ import { CommonModule } from '@angular/common';
 import { SpinnerComponent } from './components/spinner-component/spinner-component.component';
 import { ImageComparatorService } from './services/image-comparator.service';
 import { DatatableComponent } from './components/datatable-component/datatable-component.component';
+import { HeaderComponent } from './components/header-component/header-component.component';
+import { InputComponent } from './components/input-component/input-component.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, SpinnerComponent, DatatableComponent],
+  imports: [
+    CommonModule,
+    SpinnerComponent,
+    DatatableComponent,
+    HeaderComponent,
+    InputComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

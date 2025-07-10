@@ -1,0 +1,1 @@
+This is the README.md file for the server of the image comparator application.

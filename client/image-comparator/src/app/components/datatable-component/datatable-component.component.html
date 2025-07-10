@@ -1,4 +1,4 @@
-<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+<div class="relative overflow-x-auto shadow-md">
   <table
     class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
   >
@@ -13,26 +13,21 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let pair of imageData">
-        < *ngFor="let pair of imageData">
+      @for (pair of imageData; track pair) {
+      <tr
+        class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+      >
+        @for (img of [pair.img1, pair.img2]; track img) {
         <td>
           <img
-            *ngIf="pair.img1.file"
-            [src]="getFileUrl(pair.img1.hash, '1')"
-            [alt]="pair.img1.originalName"
+            *ngIf="img.file"
+            [src]="getFileUrl(img.hash, img === pair.img1 ? '1' : '2')"
+            [alt]="img.originalName"
             class="w-24 h-24 object-contain border rounded mb-2"
           />
-          <div>{{ pair.img1.originalName }}</div>
+          <div>{{ img.originalName }}</div>
         </td>
-        <td>
-          <img
-            *ngIf="pair.img2.file"
-            [src]="getFileUrl(pair.img2.hash, '2')"
-            [alt]="pair.img2.originalName"
-            class="w-24 h-24 object-contain border rounded mb-2"
-          />
-          <div>{{ pair.img2.originalName }}</div>
-        </td>
+        }
         <td class="px-6 py-4">
           <div>{{ pair.img1.hash }}</div>
         </td>
@@ -40,6 +35,7 @@
           <div>{{ pair.img1.size | number }} bytes</div>
         </td>
       </tr>
+      }
     </tbody>
   </table>
 </div>
