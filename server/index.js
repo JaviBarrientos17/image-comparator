@@ -99,5 +99,5 @@ app.post(
 
 // Start server
 app.listen(PORT, () => {
-  console.log(`🚀 Server listening at http://localhost:${PORT}`);
+  console.log(`🚀 Server listening at https://image-comparator.onrender.com/`);
 });

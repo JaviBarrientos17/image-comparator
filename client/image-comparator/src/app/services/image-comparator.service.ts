@@ -12,6 +12,6 @@ export class ImageComparatorService {
     folder1Files.forEach((file) => formData.append('folder1', file));
     folder2Files.forEach((file) => formData.append('folder2', file));
 
-    return this.http.post<any[]>('http://localhost:3000/compare', formData);
+    return this.http.post<any[]>('https://image-comparator.onrender.com/compare', formData);
   }
 }
