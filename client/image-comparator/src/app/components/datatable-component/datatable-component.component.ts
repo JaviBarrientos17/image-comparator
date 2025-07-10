@@ -1,11 +1,11 @@
-import { DecimalPipe, NgFor, NgIf } from '@angular/common';
+import { CommonModule, DecimalPipe } from '@angular/common';
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-datatable-component',
   standalone: true,
   templateUrl: './datatable-component.component.html',
-  imports: [DecimalPipe, NgFor, NgIf], // <-- Agrega NgFor y NgIf aquí
+  imports: [DecimalPipe, CommonModule],
   styleUrls: ['./datatable-component.component.scss'],
 })
 export class DatatableComponent implements OnChanges {

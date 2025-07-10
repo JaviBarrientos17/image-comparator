@@ -1,1 +1,1 @@
-This is the README.md file
+This is the README.md file for the client of the image comparator application.
