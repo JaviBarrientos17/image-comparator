@@ -1,7 +1,0 @@
-[build]
-  base = "client/image-comparator"
-  command = "ng build --configuration production"
-  publish = "dist/image-comparator"
-
-[build.environment]
-  NODE_VERSION = "18"
