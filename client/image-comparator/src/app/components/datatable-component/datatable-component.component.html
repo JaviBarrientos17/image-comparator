@@ -1,15 +1,19 @@
 <div
-  class="relative overflow-x-auto shadow-md sm:rounded-lg border border-gray-700 bg-gray-900"
+  class="relative overflow-x-auto bg-gray-900"
 >
   <table class="w-full text-sm text-left text-gray-300 rtl:text-right">
     <thead
       class="text-xs uppercase bg-gray-800 text-gray-400 border-b border-gray-600"
     >
       <tr>
-        <th scope="col" class="px-6 py-3">Imagen carpeta 1</th>
-        <th scope="col" class="px-6 py-3">Imagen carpeta 2</th>
-        <th scope="col" class="px-6 py-3">Hash</th>
-        <th scope="col" class="px-6 py-3">Tamaño</th>
+        <th scope="col" class="px-6 py-3 w-[12rem] text-center">
+          Image folder 1
+        </th>
+        <th scope="col" class="px-6 py-3 w-[12rem] text-center">
+          Image folder 2
+        </th>
+        <th scope="col" class="px-6 py-3 text-center">Hash</th>
+        <th scope="col" class="px-6 py-3 text-center">Size</th>
       </tr>
     </thead>
     <tbody>
@@ -17,32 +21,40 @@
         *ngFor="let pair of imageData; trackBy: trackByPair"
         class="bg-gray-800 border-b border-gray-700 hover:bg-gray-700 transition-colors"
       >
-        <td class="p-4 align-top">
-          <img
-            *ngIf="pair.img1.file"
-            [src]="getFileUrl(pair.img1.hash, '1')"
-            [alt]="pair.img1.originalName"
-            class="w-16 md:w-24 max-w-full max-h-full rounded-md border border-gray-600 shadow-sm mb-1"
-          />
-          <div class="text-xs font-medium text-gray-300 truncate max-w-[6rem]">
-            {{ pair.img1.originalName }}
+        <td class="p-4 align-top w-[12rem]">
+          <div class="flex flex-col items-center">
+            <img
+              *ngIf="pair.img1.file"
+              [src]="getFileUrl(pair.img1.hash, '1')"
+              [alt]="pair.img1.originalName"
+              class="w-16 md:w-24 max-w-full max-h-full rounded-md border border-gray-600 shadow-sm mb-1"
+            />
+            <div
+              class="text-xs font-medium text-gray-300 truncate max-w-[8rem] text-center"
+            >
+              {{ pair.img1.originalName }}
+            </div>
           </div>
         </td>
-        <td class="p-4 align-top">
-          <img
-            *ngIf="pair.img2.file"
-            [src]="getFileUrl(pair.img2.hash, '2')"
-            [alt]="pair.img2.originalName"
-            class="w-16 md:w-24 max-w-full max-h-full rounded-md border border-gray-600 shadow-sm mb-1"
-          />
-          <div class="text-xs font-medium text-gray-300 truncate max-w-[6rem]">
-            {{ pair.img2.originalName }}
+        <td class="p-4 align-top w-[12rem]">
+          <div class="flex flex-col items-center">
+            <img
+              *ngIf="pair.img2.file"
+              [src]="getFileUrl(pair.img2.hash, '2')"
+              [alt]="pair.img2.originalName"
+              class="w-16 md:w-24 max-w-full max-h-full rounded-md border border-gray-600 shadow-sm mb-1"
+            />
+            <div
+              class="text-xs font-medium text-gray-300 truncate max-w-[8rem] text-center"
+            >
+              {{ pair.img2.originalName }}
+            </div>
           </div>
         </td>
-        <td class="px-6 py-4 font-mono text-xs text-gray-200 align-middle">
+        <td class="px-6 py-4 font-mono text-xs text-gray-200 align-middle text-center">
           {{ pair.img1.hash }}
         </td>
-        <td class="px-6 py-4 text-xs text-gray-200 align-middle">
+        <td class="px-6 py-4 text-xs text-gray-200 align-middle text-center">
           {{ pair.img1.size | number }} bytes
         </td>
       </tr>

@@ -1,5 +1,6 @@
 import {
   Component,
+  CUSTOM_ELEMENTS_SCHEMA,
   inject,
   signal,
 } from '@angular/core';
@@ -20,6 +21,7 @@ import { HeaderComponent } from './components/header-component/header-component.
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppComponent {
   private imageComparatorSerivice = inject(ImageComparatorService);
