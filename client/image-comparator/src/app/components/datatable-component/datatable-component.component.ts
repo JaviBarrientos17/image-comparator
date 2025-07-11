@@ -30,6 +30,10 @@ export class DatatableComponent implements OnChanges {
     }
   }
 
+  trackByPair(index: number, item: any): any {
+    return item?.img1?.hash || index;
+  }
+
   getFileUrl(hash: string, folder: '1' | '2'): string | undefined {
     return this.previewUrls[hash + '_' + folder];
   }
