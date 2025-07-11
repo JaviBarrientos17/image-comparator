@@ -1,45 +1,47 @@
 <div *ngIf="!loading()">
-  <app-header-component></app-header-component>
+  <div class="flex justify-center mt-10">
+    <app-header-component></app-header-component>
+  </div>
 
-  <section class="flex justify-center mt-10 mb-8">
-    <form (submit)="onSubmit($event)" class="flex flex-col gap-4">
-      <label>
-        Selecciona la primera carpeta:
+  <section class="flex justify-center mt-10 mb-10">
+    <form
+      (submit)="onSubmit($event)"
+      class="flex flex-col gap-6 w-full max-w-xl p-6 bg-slate-800 text-white"
+    >
+      <div class="flex flex-col gap-2">
+        <label class="font-medium text-gray-800">
+          Select your first folder:
+        </label>
         <input
           type="file"
           webkitdirectory
           directory
           multiple
           (change)="onFolderSelect($event, 1)"
+          class="block w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-600 file:text-white hover:file:bg-blue-700 cursor-pointer transition-all"
         />
-      </label>
-      <br />
-      <label>
-        Selecciona la segunda carpeta:
+      </div>
+      <div class="flex flex-col gap-2">
+        <label class="font-medium text-gray-800">
+          Select your second folder:
+        </label>
         <input
           type="file"
           webkitdirectory
           directory
           multiple
           (change)="onFolderSelect($event, 2)"
+          class="block w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-600 file:text-white hover:file:bg-blue-700 cursor-pointer transition-all"
         />
-      </label>
-
-      <!-- TODO - IMPLEMENTAR CUSTOM INPUT -->
-      <app-input-component></app-input-component>
-
-      <!-- TODO - https://chatgpt.com/share/686fe25c-c240-800e-bf17-4a465205ff09 -->
-       
-      <br /><br />
+      </div>
       <button
         type="submit"
-        class="justify-center text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-lg dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+        class="justify-center text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 shadow-lg shadow-blue-500/50 dark:shadow-blue-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
       >
-        Comparar imágenes
+        Compare images
       </button>
     </form>
   </section>
-  <hr />
 
   @if(results.length >0) {
   <app-datatable-component [imageData]="results"></app-datatable-component>
@@ -49,6 +51,6 @@
 <div *ngIf="loading()" class="text-center bg-gray-200">
   <app-spinner-component></app-spinner-component>
   <div class="-mt-[10.5rem]">
-    Comparando un total de {{ totalImages() }} imágenes...
+    Comparing a total of {{ totalImages() }} images...
   </div>
 </div>

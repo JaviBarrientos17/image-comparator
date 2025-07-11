@@ -3,5 +3,8 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #e6e6e6;
+  background-color: {
+    opacity: 1;
+    background-color: rgb(30 41 59 / var(--tw-bg-opacity, 1));
+  }
 }
