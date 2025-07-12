@@ -1,0 +1,47 @@
+{
+  "root": true,
+  "ignorePatterns": ["projects/**/*"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": ["tsconfig.json"],
+        "createDefaultProgram": true
+      },
+      "extends": [
+        "plugin:@angular-eslint/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "eslint:recommended"
+      ],
+      "rules": {
+        // Angular
+        "@angular-eslint/component-selector": [
+          "error",
+          { "type": "element", "prefix": "app", "style": "kebab-case" }
+        ],
+        "@angular-eslint/directive-selector": [
+          "error",
+          { "type": "attribute", "prefix": "app", "style": "camelCase" }
+        ],
+
+        // Buenas prácticas
+        "eqeqeq": ["error", "always"],
+        "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+        "prefer-const": "error",
+        "no-var": "error",
+        "camelcase": ["error", { "properties": "always" }],
+        "@typescript-eslint/no-explicit-any": "off",
+
+        // Estilo
+        "indent": ["error", 2, { "SwitchCase": 1 }],
+        "quotes": ["error", "single", { "avoidEscape": true }],
+        "semi": ["error", "never"],
+        "comma-dangle": ["error", "always-multiline"],
+        "object-curly-spacing": ["error", "always"],
+        "array-bracket-spacing": ["error", "never"],
+        "key-spacing": ["error", { "beforeColon": false, "afterColon": true }],
+        "space-before-function-paren": ["error", "never"]
+      }
+    }
+  ]
+}

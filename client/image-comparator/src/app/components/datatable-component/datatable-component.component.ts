@@ -10,7 +10,7 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 })
 export class DatatableComponent implements OnChanges {
   @Input() imageData: any[] = [];
-  previewUrls: { [key: string]: string } = {};
+  previewUrls: Record<string, string> = {};
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['imageData'] && this.imageData) {
