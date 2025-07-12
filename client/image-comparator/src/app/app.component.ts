@@ -51,7 +51,6 @@ export class AppComponent {
       .compareImages(this.folder1Files, this.folder2Files)
       .subscribe({
         next: (data) => {
-          // Asocia el objeto File original usando originalName
           this.results = data.map((pair: any) => {
             const img1File = this.folder1Files.find(
               (f) => f.name === pair.img1.originalName

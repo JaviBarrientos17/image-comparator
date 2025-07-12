@@ -1,11 +1,11 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ImageComparatorService {
-  constructor(private http: HttpClient) {}
+  private http = inject(HttpClient);
 
   compareImages(folder1Files: File[], folder2Files: File[]) {
     const formData = new FormData();
